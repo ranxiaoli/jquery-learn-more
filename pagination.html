@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link type="text/css" rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+
+<style>
+    .pagination.pagination-text>li>a,
+    .pagination.pagination-text>li>span,
+    .pagination.pagination-text>li input{
+        border: none;
+    }
+    .pagination.pagination-text>li input {
+        width: 20px;
+    }
+</style>
+<body>
+    <nav class="rxl-pagination"></nav>
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+          <li>
+            <a href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li>
+            <a href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="pagination pagination-txt">
+            <li><span>当前<input type="text" value="10"/></span></li>
+            <li><span>每页<input type="text" value="10"/>条</span></li>
+            <li><span>共<span>xx</span>页</span></li>
+        </ul>
+      </nav>
+    <script src="./jquery/jquery-3.3.1.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="./tools/pagination.js"></script>
+    <script>
+        $.pageInit({
+               //setPos:'body',//放置位置：默认body
+                last:10,//总页数：必填
+                records:100,//数据总数：必填
+                initPage:6,//初始页码：默认1
+                perNum:10,//每页数
+                //要执行的函数：默认null，必须为fn且返回true则可执行分页，false则不执行
+                callBack:function(page){
+                    alert(page);
+                }
+        });
+    </script>
+</body>
+</html>
